@@ -1,0 +1,186 @@
+<html>
+<head>
+    <title>Digital Cultural Fest 2026 | College Event Portal</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="Official portal of Digital Cultural Fest 2026">
+    <meta name="keywords" content="Cultural Fest, College Event, Digital Fest 2026">
+    <meta name="author" content="Web Developer">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base target="_blank">
+
+    <style>
+        body{
+            margin:0;
+            font-family: Arial;
+        }
+        header{
+            font-family: 'Times New Roman', Times, serif;
+            background:#00b2be;
+            color:rgb(24, 4, 4);
+            padding:20px;
+            text-align:center;
+        }
+       
+        nav a{
+            background-color: coral;
+            color:rgb(0, 10, 101);
+            margin:10px;
+            text-decoration:none;
+        }
+        .container{
+            display:flex;
+            flex-wrap:wrap;
+        }
+        section{
+            flex:3;
+            padding:20px;
+        }
+        aside{
+            flex:1;
+            background:#f4f4f4;
+            padding:20px;
+        }
+        article{
+            margin-bottom:20px;
+            padding:15px;
+            border:1px solid #ccc;
+        }
+        footer{
+            background:#00b2be;
+            color:white;
+            text-align:center;
+            padding:15px;
+        }
+        canvas{
+            border:2px solid black;
+        }
+        img{
+            width:100%;
+            height:150px;
+        }
+    </style>
+
+    <script>
+        window.onload=function(){
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+
+            ctx.fillStyle = "orange";
+            ctx.fillRect(0,0,400,150);
+
+
+            ctx.beginPath();
+            ctx.arc(200,75,40,0,2*Math.PI);
+            ctx.fillStyle="yellow";
+            ctx.fill();
+
+            ctx.font="20px Arial";
+            ctx.fillStyle="black";
+            ctx.fillText("Welcome to Cultural Fest 2026",40,80);
+        }
+    </script>
+</head>
+
+<body>
+
+<header>
+     <img src="https://www.adobe.com/uk/creativecloud/design/discover/media_1c66507b68db7c7927c0f978345701fe0b2200583.png?width=750&format=png&optimize=medium" alt="College Logo" style="width:60px; height:60px; object-fit:cover;">
+
+    <h1>Digital Cultural Fest 2026</h1>
+    <h3>Backlog University of Technology</h3>
+    <p>Celebrate Talent - Culture - Innovation</p>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Events</a>
+        <a href="#">Register</a>
+        <a href="#">Contact</a>
+    </nav>
+</header>
+
+<section>
+    <canvas id="myCanvas" width="400" height="150"></canvas>
+
+    <h2>Event Promo Video</h2>
+    <video width="400" controls>
+        <source src="promo.mp4" type="video/mp4">
+        <source src="promo.ogg" type="video/ogg">
+        Your browser does not support video.
+    </video>
+
+    <h2>Background Music</h2>
+    <audio controls>
+        <source src="music.mp3" type="audio/mpeg">
+        <source src="music.ogg" type="audio/ogg">
+        Your browser does not support audio.
+    </audio>
+
+    <h2>YouTube Highlights</h2>
+    <iframe width="560" height="315"
+            src="https://www.youtube.com/embed/JTzOe4j7IeU?si=nGyk3fXpMWw3enNs" 
+            title="YouTube video player" 
+            frameborder="0"  
+            allowfullscreen>
+    </iframe>
+
+    <article>
+        <h2>Supported Multimedia Formats</h2>
+        <details>
+            <summary>Video Formats</summary>
+            <p>MP4, WebM, Ogg</p>
+        </details>
+        <details>
+            <summary>Audio Formats</summary>
+            <p>MP3, WAV, Ogg</p>
+        </details>
+    </article>
+
+    <h2>Events</h2>
+
+    <article>
+        <h3>Dance Competition</h3>
+        <img src="https://via.placeholder.com/400x150">
+        <p>Date: March 10, 2026 - 10 AM</p>
+    </article>
+
+    <article>
+        <h3>Singing Competition</h3>
+        <img src="https://via.placeholder.com/400x150">
+        <p>Date: March 10, 2026 - 2 PM</p>
+    </article>
+
+    <article>
+        <h3>Drama</h3>
+        <img src="https://via.placeholder.com/400x150">
+        <p>Date: March 11, 2026 - 11 AM</p>
+    </article>
+
+    <article>
+        <h3>Coding Event</h3>
+        <img src="https://via.placeholder.com/400x150">
+        <p>Date: March 11, 2026 - 3 PM</p>
+    </article>
+
+</section>
+
+<aside>
+    <h3>Sponsors</h3>
+    <p>Virus Tech</p>
+    <p>Problommm Solutions</p>
+
+    <h3>Contact</h3>
+    <p>9876543210</p>
+
+    <h3>Register</h3>
+    <a href="#">Click Here to Register</a>
+
+    <h3>Updates</h3>
+    <p>Registrations Open!</p>
+</aside>
+
+<footer>
+    <p>© 2026 Backlog University of Technology | Email: fest@BacklogUniversity.com</p>
+    <p>Address: Dholakpur, Karnataka</p>
+</footer>
+
+</body>
+</html>
