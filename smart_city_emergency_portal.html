@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Smart Emergency Portal</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{
+    font-family:Arial;
+}
+section{
+    border:1px solid gray; 
+    padding:10px; 
+    margin:10px;
+    }
+#priority{
+    border:2px dashed black;
+    min-height:80px;
+    padding:10px;
+    }
+div[draggable]{
+    padding:5px; 
+    background:lightblue; 
+    margin:5px;
+    }
+</style>
+</head>
+<body>
+
+<h1>Smart City Emergency Portal</h1>
+
+<!-- GEOLOCATION -->
+<section>
+<h2>Find My Current Location</h2>
+<button onclick="getLocation()">Detect My Location</button>
+<p id="loc"></p>
+</section>
+
+<!-- DRAG & DROP -->
+<section>
+<h2>Emergency Service Priority Board</h2>
+
+<div draggable="true" ondragstart="drag(event)" id="a"> Ambulance</div>
+<div draggable="true" ondragstart="drag(event)" id="p"> Police</div>
+<div draggable="true" ondragstart="drag(event)" id="f"> Fire</div>
+<div draggable="true" ondragstart="drag(event)" id="h"> Hospital</div>
+
+<h3>High Priority Area</h3>
+<div id="priority" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+</section>
+
+<!-- WEB STORAGE -->
+<section>
+<h2>Save My Preferences</h2>
+
+<input type="text" id="name" placeholder="Enter Name">
+<button onclick="save()">Save</button>
+<button onclick="remove()">Remove</button>
+<p id="output"></p>
+
+<hr>
+
+<button onclick="help()">Emergency Help</button>
+<p>Help Click Count: <span id="count">0</span></p>
+</section>
+
+<!-- WEB WORKER -->
+<section>
+<h2>Emergency Alert Counter</h2>
+<button onclick="start()">Start</button>
+<button onclick="stop()">Stop</button>
+<output id="worker"></output>
+</section>
+
+<script>
+
+/* GEOLOCATION */
+function getLocation(){
+if(navigator.geolocation){
+navigator.geolocation.getCurrentPosition(show, error);
+}
+}
+
+function show(pos){
+document.getElementById("loc").innerHTML=
+"Lat: "+pos.coords.latitude+
+"<br>Long: "+pos.coords.longitude+
+"<br>Accuracy: "+pos.coords.accuracy+
+"<br>Time: "+pos.timestamp;
+}
+
+function error(e){
+switch(e.code){
+case 1: msg="Permission Denied"; break;
+case 2: msg="Position Unavailable"; break;
+case 3: msg="Timeout"; break;
+default: msg="Unknown Error";
+}
+document.getElementById("loc").innerHTML=msg;
+}
+
+/* DRAG & DROP */
+function allowDrop(e){ e.preventDefault(); }
+function drag(e){ e.dataTransfer.setData("text", e.target.id); }
+function drop(e){
+e.preventDefault();
+var data=e.dataTransfer.getData("text");
+e.target.appendChild(document.getElementById(data));
+}
+
+/* LOCAL STORAGE */
+window.onload=function(){
+var n=localStorage.getItem("name");
+if(n){ document.getElementById("output").innerHTML="Welcome "+n; }
+}
+
+function save(){
+var n=document.getElementById("name").value;
+localStorage.setItem("name",n);
+document.getElementById("output").innerHTML="Saved "+n;
+}
+
+function remove(){
+localStorage.removeItem("name");
+document.getElementById("output").innerHTML="Removed";
+}
+
+/* SESSION STORAGE */
+function help(){
+var c=sessionStorage.getItem("count");
+c=c?parseInt(c)+1:1;
+sessionStorage.setItem("count",c);
+document.getElementById("count").innerHTML=c;
+}
+
+/* WEB WORKER */
+var w;
+
+function start(){
+if(typeof(Worker)!=="undefined"){
+if(typeof(w)=="undefined"){
+w=new Worker("emergency_worker.js");
+}
+w.onmessage=function(e){
+document.getElementById("worker").innerHTML=e.data;
+};
+}
+}
+
+function stop(){
+w.terminate();
+w=undefined;
+}
+
+</script>
+
+</body>
+</html>
