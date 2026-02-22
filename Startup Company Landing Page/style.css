@@ -1,0 +1,124 @@
+/* ===============================
+   EcoTech Solutions Main Styles
+   =============================== */
+
+/* Using HEX 6-digit for Navigation */
+header {
+    background-color: #2E8B57; /* Sea green for eco theme */
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* 3-digit HEX for heading color */
+h2 {
+    color: #0a5;
+}
+
+/* RGB for background */
+.about {
+    background-color: rgb(220, 255, 220);
+    padding: 20px;
+}
+
+/* RGB for text color */
+.about p {
+    color: rgb(34, 139, 34);
+}
+
+/* HSL for section background */
+.services {
+    background-color: hsl(120, 60%, 90%);
+    padding: 20px;
+}
+
+/* Color Names */
+.services li {
+    color: Tomato;
+}
+
+/* Product section */
+.products {
+    background-color: DodgerBlue;
+    padding: 20px;
+    color: white;
+}
+
+/* 3-digit HEX for border */
+.product-card {
+    border: 3px solid #333;
+    padding: 15px;
+}
+
+/* RGBA for semi-transparent testimonial */
+.testimonials {
+    background-color: hsl(160, 50%, 85%);
+    padding: 20px;
+}
+
+.testimonial-card {
+    background-color: rgba(0, 128, 0, 0.4);
+    padding: 15px;
+    border: 2px solid SlateBlue;
+}
+
+/* HSLA for highlight effect */
+.contact {
+    background-color: hsla(200, 70%, 80%, 0.6);
+    padding: 20px;
+}
+
+/* HEX 6-digit for footer */
+footer {
+    background-color: #004d40;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* ===============================
+   CSS Comments Examples
+   =============================== */
+
+/* This is a single-line comment */
+
+/*
+   This is a multi-line comment
+   explaining that green shades are
+   used for eco-friendly branding.
+*/
+
+/* Comment in middle of property */
+footer {
+    font-size: 16px /* slightly bigger text */;
+}
+
+/* Temporarily disabled rule */
+/*
+header {
+    background-color: red;
+}
+*/
+
+/* ===============================
+   Demonstrating Common CSS Errors
+   (Inside comments only)
+   =============================== */
+
+/*
+Missing semicolon example:
+color: blue
+
+Invalid property:
+colr: red;
+
+Invalid value:
+color: 12345;
+
+Unclosed brace:
+body {
+   background: white;
+
+Extra colon:
+color:: red;
+*/
