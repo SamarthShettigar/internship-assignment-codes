@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>National Tech Fest</title>
+
+    <style>
+        /* ===== General Styling ===== */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* ===== 1. Sticky Navigation Bar ===== */
+        nav {
+            position: sticky;   /* stays on top while scrolling */
+            top: 0;
+            background: #1e3a8a;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            z-index: 1000;  /* stays above all content */
+        }
+
+        /* ===== 2. Hero Section ===== */
+        .hero {
+            position: relative; /* parent for absolute text */
+        }
+
+        .hero img {
+            width: 100%;
+            height: 400px;
+        }
+
+        .hero-text {
+            position: absolute;  /* text over image */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            z-index: 2;   /* above image */
+        }
+
+        /* ===== 3. About Section (Float) ===== */
+        .about {
+            padding: 20px;
+        }
+
+        .about img {
+            float: left;   /* float property */
+            width: 200px;
+            margin-right: 15px;
+        }
+
+        /* ===== 4. Speakers Section (Center Alignment using Flexbox) ===== */
+        .speakers {
+            display: flex;
+            justify-content: center; /* center horizontally */
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .card {
+            width: 200px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+
+        /* ===== 5. Registration Panel (Overflow) ===== */
+        .registration {
+            height: 150px;
+            border: 2px solid black;
+            margin: 20px;
+            padding: 10px;
+            overflow-y: auto; /* scroll vertically */
+        }
+
+        /* ===== 6. Transparent Announcement Box ===== */
+        .announcement {
+            background: url("https://picsum.photos/1200/400") no-repeat center;
+            background-size: cover;
+            padding: 60px;
+            text-align: center;
+            color: white;
+        }
+
+        .announcement-box {
+            background: rgba(0, 0, 0, 0.6); /* semi-transparent */
+            padding: 20px;
+            display: inline-block;
+        }
+
+        /* ===== 7. Floating Contact Button ===== */
+        .contact-btn {
+            position: fixed;   /* stays bottom-right */
+            bottom: 20px;
+            right: 20px;
+            background: red;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Sticky Navigation -->
+    <nav>
+        National Level Technical Fest 2026
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <img src="https://picsum.photos/1200/400" alt="Event Banner">
+        <div class="hero-text">
+            TECHNOVATION 2026
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div class="about">
+        <h2>About The Event</h2>
+        <img src="https://picsum.photos/200" alt="Event Image">
+        <p>
+            TECHNOVATION 2026 is a National Level Technical Fest 
+            bringing together students from across the country. 
+            It includes coding competitions, robotics challenges, 
+            paper presentations, workshops, and exciting prizes.
+            Join us to explore innovation and technology.
+        </p>
+        <div style="clear: both;"></div>
+    </div>
+
+    <!-- Speakers Section -->
+    <h2 style="text-align:center;">Guest Speakers</h2>
+    <div class="speakers">
+        <div class="card">
+            <h3>Speaker 1</h3>
+            <p>AI Expert</p>
+        </div>
+        <div class="card">
+            <h3>Speaker 2</h3>
+            <p>Cyber Security Specialist</p>
+        </div>
+        <div class="card">
+            <h3>Speaker 3</h3>
+            <p>Startup Founder</p>
+        </div>
+    </div>
+
+    <!-- Registration Section -->
+    <h2 style="text-align:center;">Registration Details</h2>
+    <div class="registration">
+        <p>
+            Registration is open for all engineering students.
+            Early bird registrations get special discounts.
+            Participants must carry college ID.
+            Accommodation available for outstation students.
+            Last date to register: March 30, 2026.
+            Limited seats available. Hurry up!
+            Contact event coordinators for more details.
+        </p>
+    </div>
+
+    <!-- Announcement Section -->
+    <div class="announcement">
+        <div class="announcement-box">
+            <h2>Big Announcement!</h2>
+            <p>Prize Pool Worth ₹2,00,000</p>
+        </div>
+    </div>
+
+    <!-- Floating Contact Button -->
+    <button class="contact-btn">
+        Contact Us
+    </button>
+
+</body>
+</html>
