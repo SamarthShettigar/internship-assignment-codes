@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>College Technical Event Portal</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+body{position:relative;}section{padding:80px 0;} .carousel-item img{height:500px;object-fit:cover;}
+</style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="70" tabindex="0">
+<nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+<div class="container">
+<a class="navbar-brand" href="#">TechFest 2026</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navMenu">
+<ul class="navbar-nav ms-auto">
+<li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+<li class="nav-item"><a class="nav-link" href="#schedule">Schedule</a></li>
+<li class="nav-item"><a class="nav-link" href="#speakers">Speakers</a></li>
+<li class="nav-item"><a class="nav-link" href="#register">Register</a></li>
+</ul>
+</div>
+</div>
+</nav>
+<div id="eventCarousel" class="carousel slide mt-5" data-bs-ride="carousel">
+<div class="carousel-indicators">
+<button type="button" data-bs-target="#eventCarousel" data-bs-slide-to="0" class="active"></button>
+<button type="button" data-bs-target="#eventCarousel" data-bs-slide-to="1"></button>
+<button type="button" data-bs-target="#eventCarousel" data-bs-slide-to="2"></button>
+</div>
+<div class="carousel-inner">
+<div class="carousel-item active">
+<img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f" class="d-block w-100">
+<div class="carousel-caption">
+<h3>Hackathon</h3>
+<p>24 hour coding challenge for innovative solutions</p>
+</div>
+</div>
+<div class="carousel-item">
+<img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c" class="d-block w-100">
+<div class="carousel-caption">
+<h3>AI Workshop</h3>
+<p>Learn Artificial Intelligence from industry experts</p>
+</div>
+</div>
+<div class="carousel-item">
+<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" class="d-block w-100">
+<div class="carousel-caption">
+<h3>Web Development Bootcamp</h3>
+<p>Build modern responsive websites using Bootstrap</p>
+</div>
+</div>
+</div>
+<button class="carousel-control-prev" type="button" data-bs-target="#eventCarousel" data-bs-slide="prev">
+<span class="carousel-control-prev-icon"></span>
+</button>
+<button class="carousel-control-next" type="button" data-bs-target="#eventCarousel" data-bs-slide="next">
+<span class="carousel-control-next-icon"></span>
+</button>
+</div>
+<section id="about" class="container">
+<h2 class="text-center mb-4">About Event</h2>
+<p class="text-center">TechFest 2026 is a college technical festival featuring coding competitions, AI workshops, and web development training sessions for students.</p>
+</section>
+<section id="schedule" class="bg-light">
+<div class="container">
+<h2 class="text-center mb-4">Event Schedule</h2>
+<ul class="list-group">
+<li class="list-group-item">10:00 AM – Opening Ceremony</li>
+<li class="list-group-item">11:00 AM – AI Workshop</li>
+<li class="list-group-item">2:00 PM – Web Development Bootcamp</li>
+<li class="list-group-item">6:00 PM – Hackathon Begins</li>
+</ul>
+</div>
+</section>
+<section id="speakers" class="container">
+<h2 class="text-center mb-4">Speakers</h2>
+<div class="row text-center">
+<div class="col-md-4"><h5>Dr. Rahul Sharma</h5><p>AI Research Scientist</p></div>
+<div class="col-md-4"><h5>Priya Nair</h5><p>Full Stack Developer</p></div>
+<div class="col-md-4"><h5>Arjun Rao</h5><p>Cyber Security Expert</p></div>
+</div>
+</section>
+<section id="register" class="bg-light text-center">
+<div class="container">
+<h2 class="mb-4">Register For Event</h2>
+<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#registerModal" data-bs-toggle="tooltip" title="Click to register for this event">Register Now</button>
+<button class="btn btn-info ms-2" data-bs-toggle="tooltip" title="View event schedule">Schedule</button>
+</div>
+</section>
+<div class="modal fade" id="registerModal">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+<h5 class="modal-title">Event Registration</h5>
+<button class="btn-close" data-bs-dismiss="modal"></button>
+</div>
+<div class="modal-body">
+<form id="regForm">
+<div class="mb-3"><label class="form-label">Student Name</label><input type="text" class="form-control" required></div>
+<div class="mb-3"><label class="form-label">Email ID</label><input type="email" class="form-control" required></div>
+<div class="mb-3"><label class="form-label">Department</label><input type="text" class="form-control" required></div>
+<button type="submit" class="btn btn-success">Submit Registration</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+<div class="position-fixed bottom-0 end-0 p-3">
+<div id="successToast" class="toast">
+<div class="toast-header">
+<strong class="me-auto">Notification</strong>
+<button class="btn-close" data-bs-dismiss="toast"></button>
+</div>
+<div class="toast-body">Registration Successful! Check your email for confirmation.</div>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+var tooltipTriggerList=[].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));tooltipTriggerList.map(function(t){return new bootstrap.Tooltip(t)});document.getElementById("regForm").addEventListener("submit",function(e){e.preventDefault();var toast=new bootstrap.Toast(document.getElementById("successToast"));toast.show()})
+</script>
+</body>
+</html>
