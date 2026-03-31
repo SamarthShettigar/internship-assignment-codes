@@ -1,5 +1,4 @@
 var i=0;
-
 function count(){
 i++;
 postMessage(i);
